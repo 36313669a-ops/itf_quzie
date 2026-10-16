@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>題庫管理</title><link rel="stylesheet" href="/css/style.css"></head><body>
+<header class="topbar"><div class="brand">題庫管理後台</div><nav><a href="/">首頁</a><a href="/host.html">主持人控制台</a></nav></header>
+<main class="wrap"><div id="authCard" class="card narrow"><h1>管理員登入</h1><p class="muted">請使用 Firebase Authentication 中已建立的管理員帳號。</p><label>Email</label><input id="email" type="email" autocomplete="username"><label>密碼</label><input id="password" type="password" autocomplete="current-password"><div class="row" style="margin-top:14px"><button class="btn" id="loginBtn">登入</button><button class="btn secondary" id="logoutBtn">登出</button></div><div id="authNotice" class="notice"></div></div>
+<section id="editor" class="hidden"><div class="card"><div class="row"><div><h1>題庫編輯器</h1><p class="muted">建立四選一題目；正確答案由管理端保存，不會提供給玩家頁。</p></div><button class="btn secondary" id="newBtn">新增空白題目</button></div>
+<input id="qid" type="hidden"><label>題目內容</label><textarea id="questionText" placeholder="輸入題目"></textarea>
+<div class="grid"><div><label>選項 A</label><input id="opt0"></div><div><label>選項 B</label><input id="opt1"></div><div><label>選項 C</label><input id="opt2"></div><div><label>選項 D</label><input id="opt3"></div></div>
+<div class="grid"><div><label>正確答案</label><select id="correct"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></div><div><label>答題秒數</label><input id="duration" type="number" min="5" max="120" value="20"></div><div><label>答對基本分</label><input id="points" type="number" min="100" max="1000" step="100" value="1000"></div></div>
+<div class="row" style="margin-top:14px"><button class="btn" id="saveBtn">儲存題目</button><button class="btn secondary" id="clearBtn">清空表單</button></div><div id="editorNotice" class="notice"></div></div>
+<div class="card"><h2>目前題庫</h2><div id="questionList" class="question-list"></div></div></section></main>
+<script type="module" src="/js/admin.js"></script></body></html>
